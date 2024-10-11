@@ -1,6 +1,8 @@
 package com.example.bottomsheetdemo
 
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
 import android.view.ViewGroup
@@ -44,11 +46,16 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "clicked on ", Toast.LENGTH_SHORT).show()
         }
 
+
         dialog.show()
+
         dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        dialog.window?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.white))
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window?.attributes?.windowAnimations = R.style.dialogAnimation
         dialog.window?.setGravity(Gravity.BOTTOM)
+
+
+
 
     }
 }
