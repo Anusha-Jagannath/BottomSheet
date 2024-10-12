@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.title.setOnClickListener {
-            showBottomSheet()
+           // showBottomSheet()
+            val bottomSheet = MyBottomSheetDialogFragment()
+            bottomSheet.show(supportFragmentManager, "MyBottomSheetDialog")
         }
 
 
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.layout_demo)
-        val title: AppCompatTextView = dialog.findViewById(R.id.title1)
+        val title: EditText = dialog.findViewById(R.id.title1)
         title.setOnClickListener {
             Toast.makeText(this, "clicked on ", Toast.LENGTH_SHORT).show()
         }
